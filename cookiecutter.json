@@ -1,0 +1,22 @@
+{
+    "full_name": "Europace dNa",
+    "email": "dna@europace.de",
+    "github_username_or_organization": "hypoport",
+    "project_name": "Serverless Python Lambda",
+    "project_prefix": "ep-dna",
+    "lambda_name": "hello-world-lambda",
+    "project_directory": "{{ cookiecutter.project_prefix + '-' + cookiecutter.project_name.lower().replace(' ', '-').replace('_', '-') }}",
+    "project_short_description": "Template that contains a basic AWS lambda function alongside serverless and pytest for testing",
+    "pypi_username": "{{ cookiecutter.github_username_or_organization }}",
+    "version": "0.1.0",
+    "add_pyup_badge": "n",
+    "create_author_file": "y",
+    "open_source_license": [
+        "MIT license",
+        "BSD license",
+        "ISC license",
+        "Apache Software License 2.0",
+        "GNU General Public License v3",
+        "Not open source"
+    ]
+}
