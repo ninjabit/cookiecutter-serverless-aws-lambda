@@ -1,11 +1,12 @@
 """Tests for `{{ cookiecutter.project_slug }}` package."""
 
+import pytest
 from unittest import TestCase
 
 from {{ cookiecutter.lambda_name }} import {{ cookiecutter.lambda_name }}
 
 
-class Test{{ cookiecutter.project_slug|title }}(TestCase):
+class Test{{ cookiecutter.lambda_name|title }}(TestCase):
     """Tests for `{{ cookiecutter.project_slug }}` package."""
 
     def setUp(self):
@@ -16,4 +17,4 @@ class Test{{ cookiecutter.project_slug|title }}(TestCase):
 
     def test_000_something(self):
         """Test something."""
-        self.fail()
+        pass

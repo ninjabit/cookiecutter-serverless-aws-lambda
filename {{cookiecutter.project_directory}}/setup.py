@@ -32,7 +32,7 @@ setup(
         'Programming Language :: Python :: 3.6',
     ],
     description="{{ cookiecutter.project_short_description }}",
-    install_requires=requirements,
+    install_requires=[],
 {%- if cookiecutter.open_source_license in license_classifiers %}
     license="{{ cookiecutter.open_source_license }}",
 {%- endif %}
