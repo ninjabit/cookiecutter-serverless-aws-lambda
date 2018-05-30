@@ -1,3 +1,8 @@
-# -*- coding: utf-8 -*-
+def process(event):
+    print(event)
 
-"""Main module."""
+
+def lambda_handler(event, context):
+    process(event)
+    return {'statusCode': 200,
+            'body': "Hello World!"}
