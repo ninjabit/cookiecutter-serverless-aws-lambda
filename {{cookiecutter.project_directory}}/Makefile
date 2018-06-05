@@ -1,5 +1,6 @@
 .PHONY: clean clean-test clean-pyc clean-build docs help
 .DEFAULT_GOAL := help
+STAGE=dev
 
 define BROWSER_PYSCRIPT
 import os, webbrowser, sys
@@ -29,7 +30,11 @@ BROWSER := python -c "$$BROWSER_PYSCRIPT"
 help:
 	@python -c "$$PRINT_HELP_PYSCRIPT" < $(MAKEFILE_LIST)
 
-clean: clean-build clean-pyc clean-test ## remove all build, test, coverage and Python artifacts
+clean: clean-build clean-pyc clean-test clean-tooling ## remove all build, test, coverage and Python artifacts
+
+clean-tooling: ## removes node_modules and .venv
+	rm -rf node_modules/
+	rm -rf .venv/
 
 clean-build: ## remove build artifacts
 	rm -fr build/
@@ -65,13 +70,14 @@ coverage: ## check code coverage quickly with the default Python
 	coverage html
 	$(BROWSER) htmlcov/index.html
 
-release: dist ## package and upload a release
-	twine upload dist/*
+setup: ## setup serverless (node) and create a .venv
+	PIPENV_IGNORE_VIRTUALENVS=1
+	PIPENV_VENV_IN_PROJECT=1
+	set -eux pipefail
+	npm install
+	pipenv install
 
-dist: clean ## builds source and wheel package
-	python setup.py sdist
-	python setup.py bdist_wheel
-	ls -l dist
+deploy: ## deploy serverless project to dev
+	./node_modules/serverless/bin/serverless deploy --stage=$(STAGE)
 
-install: clean ## install the package to the active Python's site-packages
-	python setup.py install
+
