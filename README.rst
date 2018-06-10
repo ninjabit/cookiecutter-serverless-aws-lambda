@@ -3,6 +3,7 @@ Cookiecutter Python AWS Lambda with Serverless
 ================================================
 
 Cookiecutter_ template for a Python AWS Lambda with Serverless_, Pipenv_ etc..
+
 It is based on Andrew Elgert's cookiecutter_pipenv_ project.
 
 * GitHub repo: https://github.com/hypoport/cookiecutter-serverless-aws-lambda/
@@ -49,7 +50,8 @@ Once your project has been created, change directories::
 
     cd <project-name>
 
-Then:
+
+**Then:**
 
 * Create a repo and put it there (e.g. ``git init``).
 * Setup the project (``make setup``).
