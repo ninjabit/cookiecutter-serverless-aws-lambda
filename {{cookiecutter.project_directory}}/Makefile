@@ -61,7 +61,7 @@ lint: ## check style with flake8
 test: ## run tests quickly with the default Python
 	py.test
 
-test-all: ## run tests on every Python version with tox
+test-all: create-venv ## run tests on every Python version with tox
 	tox
 
 coverage: ## check code coverage quickly with the default Python
@@ -70,12 +70,13 @@ coverage: ## check code coverage quickly with the default Python
 	coverage html
 	$(BROWSER) htmlcov/index.html
 
-setup: ## setup serverless (node) and create a .venv
-	PIPENV_IGNORE_VIRTUALENVS=1
-	PIPENV_VENV_IN_PROJECT=1
+create-venv: ## setup virtual env for project in .venv
+	set -eux pipefail
+	export PIPENV_IGNORE_VIRTUALENVS=1, PIPENV_VENV_IN_PROJECT=1 && pipenv install
+
+setup: create-venv ## setup serverless (node) and create a .venv
 	set -eux pipefail
 	npm install
-	pipenv install
 
 deploy: ## deploy serverless project to dev
 	./node_modules/serverless/bin/serverless deploy --stage=$(STAGE)
