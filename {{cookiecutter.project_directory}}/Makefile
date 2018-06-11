@@ -81,4 +81,7 @@ setup: create-venv ## setup serverless (node) and create a .venv
 deploy: ## deploy serverless project to dev
 	./node_modules/serverless/bin/serverless deploy --stage=$(STAGE)
 
+remove: ## remove the stack deployed with serverless
+	./node_modules/serverless/bin/serverless remove --stage=$(STAGE)
+
 
