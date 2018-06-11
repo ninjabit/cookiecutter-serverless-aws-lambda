@@ -70,9 +70,11 @@ coverage: ## check code coverage quickly with the default Python
 	coverage html
 	$(BROWSER) htmlcov/index.html
 
-create-venv: ## setup virtual env for project in .venv
+create-venv: ## setup virtual env for project in .venv if it does not exist
 	set -eux pipefail
-	export PIPENV_IGNORE_VIRTUALENVS=1, PIPENV_VENV_IN_PROJECT=1 && pipenv install
+	if [ ! -d ".venv" ]; then \
+	export PIPENV_IGNORE_VIRTUALENVS=1, PIPENV_VENV_IN_PROJECT=1 && pipenv sync --dev; \
+	fi
 
 setup: create-venv ## setup serverless (node) and create a .venv
 	set -eux pipefail
