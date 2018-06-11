@@ -1,4 +1,4 @@
-"""Tests for `{{ cookiecutter.project_slug }}` package."""
+"""Tests for `{{ cookiecutter.project_directory }}` package."""
 
 import pytest
 from {{ cookiecutter.lambda_name }}.main import say_hello, add_2
