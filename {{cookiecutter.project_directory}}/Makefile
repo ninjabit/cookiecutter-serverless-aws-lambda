@@ -1,4 +1,4 @@
-.PHONY: clean clean-test clean-pyc clean-build docs help
+.PHONY: clean clean-test clean-pyc clean-build clean-tooling help
 .DEFAULT_GOAL := help
 STAGE=dev
 
