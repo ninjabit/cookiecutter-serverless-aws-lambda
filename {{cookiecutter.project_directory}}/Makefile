@@ -62,8 +62,7 @@ test: ## run tests quickly with the default Python
 	py.test -v
 
 test-all: create-venv ## run tests on every Python version with tox
-	pipenv shell
-	tox
+	pipenv run tox
 
 coverage: ## check code coverage quickly with the default Python
 	coverage run -m pytest -v
