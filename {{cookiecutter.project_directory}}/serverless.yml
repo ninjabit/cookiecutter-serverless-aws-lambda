@@ -36,8 +36,6 @@ custom:
     fileName: Pipfile
     dockerUsePipenv: true
     dockerFile: Dockerfile
-    dockerEnvVars:
-      GITHUB_TOKEN: ${opt:github_token, ""}
   git-repo: https://github.com/{{ cookiecutter.github_username_or_organization }}/{{ cookiecutter.project_directory }}
 
 functions:
