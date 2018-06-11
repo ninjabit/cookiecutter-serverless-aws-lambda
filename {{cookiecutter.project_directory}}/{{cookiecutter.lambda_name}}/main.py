@@ -1,5 +1,5 @@
-def process(event):
-    print(event)
+def add_2(number: float):
+    return number + 2
 
 
 def say_hello():
@@ -7,6 +7,5 @@ def say_hello():
 
 
 def lambda_handler(event, context):
-    process(event)
     return {'statusCode': 200,
             'body': say_hello()}
