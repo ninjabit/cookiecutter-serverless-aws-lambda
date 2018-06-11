@@ -62,6 +62,7 @@ test: ## run tests quickly with the default Python
 	py.test -v
 
 test-all: create-venv ## run tests on every Python version with tox
+	pipenv shell
 	tox
 
 coverage: ## check code coverage quickly with the default Python
@@ -73,7 +74,7 @@ coverage: ## check code coverage quickly with the default Python
 create-venv: ## setup virtual env for project in .venv if it does not exist
 	set -eux pipefail
 	if [ ! -d ".venv" ]; then \
-	export PIPENV_IGNORE_VIRTUALENVS=1, PIPENV_VENV_IN_PROJECT=1 && pipenv sync --dev; \
+		export PIPENV_IGNORE_VIRTUALENVS=1, PIPENV_VENV_IN_PROJECT=1 && pipenv lock && pipenv sync --dev; \
 	fi
 
 setup: create-venv ## setup serverless (node) and create a .venv
