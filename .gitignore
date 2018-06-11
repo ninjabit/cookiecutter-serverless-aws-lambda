@@ -98,3 +98,5 @@ target/
 # Cookiecutter
 output/
 python_boilerplate/
+!/{{cookiecutter.project_directory}}/.idea/
+!/{{cookiecutter.project_directory}}/.idea/{{cookiecutter.project_directory}}.iml
