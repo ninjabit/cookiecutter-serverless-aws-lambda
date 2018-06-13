@@ -37,7 +37,7 @@ Features
 Credits
 -------
 
-This package was created with Cookiecutter_ and the `hypoport/cookiecutter-serverless-aws-lambda`_, based on `elgertam/cookiecutter-pipenv`_ and `audreyr/cookiecutter-pypackage`_.
+This software was created with Cookiecutter_ and the `hypoport/cookiecutter-serverless-aws-lambda`_, based on `elgertam/cookiecutter-pipenv`_ and `audreyr/cookiecutter-pypackage`_.
 
 .. _Cookiecutter: https://github.com/audreyr/cookiecutter
 .. _`hypoport/cookiecutter-serverless-aws-lambda`: https://github.com/hypoport/cookiecutter-serverless-aws-lambda
