@@ -11,7 +11,7 @@ Cookiecutter Python AWS Lambda with Serverless
 
 Packaging in Python can be a pain, but it doesn't need to be. The new Pipenv project
 has rapidly improved packaging in Python by tackling two related problems: automatic
-package dependency management and virtualenv management. Pipenv uses the new Pipfile_
+package dependency management and virtualenv management. Pipenv uses the new [Pipfile](https://github.com/pypa/pipfile)
 format that is the endorsed replacement for `requirements.txt`. Pipenv is the future of
 Python package management in *application development*, and is even recommended to newcomers in the Python 
 [tutorial](https://packaging.python.org/tutorials/managing-dependencies/#managing-dependencies).
@@ -55,6 +55,7 @@ cd <project-name>
 * Create a repo and put it there (e.g. `git init`).
 * Setup the project (`make setup`).
 * Deploy your serverless AWS service (`make deploy [STAGE]`).
+* Remove the serverless stack (`make remove [STAGE]`).
 
 ## Fork This / Create Your Own
 
