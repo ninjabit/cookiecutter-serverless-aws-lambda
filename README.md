@@ -54,8 +54,8 @@ cd <project-name>
 
 * Create a repo and put it there (e.g. `git init`).
 * Setup the project (`make setup`).
-* Deploy your serverless AWS service (`make deploy [STAGE]`).
-* Remove the serverless stack (`make remove [STAGE]`).
+* Deploy your serverless AWS service (`make deploy [STAGE=stage]`).
+* Remove the serverless stack (`make remove [STAGE=stage]`).
 
 ## Fork This / Create Your Own
 
