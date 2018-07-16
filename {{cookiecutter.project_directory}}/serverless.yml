@@ -25,8 +25,7 @@ package:
   exclude:
     - '**/*'
   include:
-    - '*_lambda/**/*.py'
-    - '*_lambda/**/*.json'
+    - '{{ cookiecutter.lambda_name }}/**'
 
 custom:
   awsAccountId: {{ cookiecutter.aws_account_id }}
@@ -34,7 +33,6 @@ custom:
   pythonRequirements:
     dockerizePip: 'true'
     fileName: Pipfile
-    dockerUsePipenv: true
     dockerFile: Dockerfile
   git-repo: https://github.com/{{ cookiecutter.github_username_or_organization }}/{{ cookiecutter.project_directory }}
 

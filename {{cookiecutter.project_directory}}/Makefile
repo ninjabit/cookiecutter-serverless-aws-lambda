@@ -1,4 +1,4 @@
-.PHONY: clean clean-test clean-pyc clean-build clean-tooling help
+.PHONY: clean clean-test clean-pyc clean-build clean-tooling help create-venv setup deploy remove
 .DEFAULT_GOAL := help
 STAGE=dev
 
