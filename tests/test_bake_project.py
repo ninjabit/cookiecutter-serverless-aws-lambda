@@ -104,13 +104,13 @@ def test_bake_with_apostrophe_and_run_tests(cookies):
 def test_bake_without_author_file(cookies):
     with bake_in_temp_dir(cookies, extra_context={'create_author_file': 'n'}) as result:
         found_toplevel_files = [f.basename for f in result.project.listdir()]
-        assert 'AUTHORS.rst' not in found_toplevel_files
+        assert 'AUTHORS.md' not in found_toplevel_files
         # Check that
         manifest_path = result.project.join('MANIFEST.in')
         with open(str(manifest_path)) as manifest_file:
             bdy = manifest_file.read()
             print(bdy)
-            assert 'AUTHORS.rst' not in bdy
+            assert 'AUTHORS.md' not in bdy
 
 
 def test_bake_selecting_license(cookies):
@@ -132,7 +132,7 @@ def test_bake_not_open_source(cookies):
         found_toplevel_files = [f.basename for f in result.project.listdir()]
         assert 'setup.py' in found_toplevel_files
         assert 'LICENSE' not in found_toplevel_files
-        assert 'License' not in result.project.join('README.rst').read()
+        assert 'License' not in result.project.join('README.md').read()
 
 
 def test_not_using_pytest(cookies):
