@@ -37,6 +37,7 @@ clean-tooling: ## removes node_modules and .venv
 	rm package-lock.json
 	rm Pipfile.lock
 	rm -rf .venv/
+	rm -rf .serverless/
 
 clean-build: ## remove build artifacts
 	rm -fr build/
@@ -56,20 +57,26 @@ clean-test: ## remove test and coverage artifacts
 	rm -f .coverage
 	rm -fr htmlcov/
 	rm -fr .pytest_cache
+	rm -fr .cache
 
-lint: ## check style with flake8
-	flake8 {{ cookiecutter.project_directory }} tests
+lint: ## check style with flake8 & check serverless.yml
+	flake8 .
+	yamllint serverless.yml
 
 test: ## run tests quickly with the default Python
 	PYTHONPATH=$(pwd):$$PYTHONPATH  pipenv run pytest -v
 
-test-all: create-venv ## run tests on every Python version with tox
-	pipenv run tox
+test-all: clean-pyc ## run tests on every Python version with tox
+	if [ -e /.dockerenv ]; then \
+		tox; \
+	else \
+		pipenv run tox; \
+	fi
 
 coverage: ## check code coverage quickly with the default Python
-	coverage run -m pytest -v
-	coverage report -m
-	coverage html
+	pipenv run coverage run -m pytest -v
+	pipenv run coverage report -m
+	pipenv run coverage html
 	$(BROWSER) htmlcov/index.html
 
 create-venv: ## setup virtual env for project in .venv if it does not exist
@@ -83,7 +90,12 @@ setup: create-venv ## setup serverless (node) and create a .venv
 	npm install
 
 deploy: ## deploy serverless project to dev
-	./node_modules/serverless/bin/serverless deploy --stage=$(STAGE)
+	if [ -e /.dockerenv ]; then \
+		if [ ! -e ./node_modules/serverless/bin/serverless ]; then npm install; fi; \
+		./node_modules/serverless/bin/serverless deploy --stage=$(STAGE) --skip-docker-packaging=true; \
+	else \
+		./node_modules/serverless/bin/serverless deploy --stage=$(STAGE); \
+	fi
 
 remove: ## remove the stack deployed with serverless
 	./node_modules/serverless/bin/serverless remove --stage=$(STAGE)
