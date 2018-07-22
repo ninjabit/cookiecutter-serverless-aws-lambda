@@ -6,8 +6,15 @@ include HISTORY.md
 include LICENSE
 include README.md
 
+recursive-include *_lambda *
 recursive-include tests *
 recursive-exclude * __pycache__
 recursive-exclude * *.py[co]
+prune .idea
+prune .pytest_cache
+prune .serverless
+prune .tox
+prune .venv
+prune node_modules
+prune html_cov
 
-recursive-include docs *.md conf.py Makefile make.bat *.jpg *.png *.gif

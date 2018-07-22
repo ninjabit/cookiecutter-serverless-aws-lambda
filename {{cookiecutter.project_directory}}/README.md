@@ -19,13 +19,46 @@
 * Documentation: https://{{ cookiecutter.project_directory | replace("_", "-") }}.readthedocs.io.
 {% endif %}
 
-Features
---------
+# Quickstart
 
-* TODO
+1. Setup the python & serverless environment for testing, development & deployment
+    ```
+    make setup
+    ```
 
-Credits
--------
+2. Deploy your serverless AWS service 
+    ```
+    make deploy [STAGE=stage]
+    ```
+
+3. Remove the serverless stack 
+    ```
+    make remove [STAGE=stage]
+    ```
+
+# Features
+
+**Testing** - using pytest:
+```
+make test
+```
+
+**Testing** - Using tox (includes linting using flake8 & linting of `serverless.yml`):
+```
+make test-all
+```
+
+**Testing** - test coverage:
+```
+make coverage
+```
+
+**Clean up** the environment (pipenv installation, serverless & npm, build-artifacts etc):
+```
+make clean
+```
+
+# Credits
 
 This software was created with [Cookiecutter] and the [`hypoport/cookiecutter-serverless-aws-lambda`], based on 
 [`elgertam/cookiecutter-pipenv`] and [`audreyr/cookiecutter-pypackage`].

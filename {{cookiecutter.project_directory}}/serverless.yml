@@ -1,3 +1,4 @@
+---
 service:
   name: {{ cookiecutter.project_directory }}
 
