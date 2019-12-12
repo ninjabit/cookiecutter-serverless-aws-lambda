@@ -13,7 +13,7 @@ Types of Contributions
 Report Bugs
 ~~~~~~~~~~~
 
-Report bugs at https://github.com/elgertam/cookiecutter-pipenv/issues
+Report bugs at https://github.com/ninjabit/cookiecutter-serverless-aws-lambda/issues
 
 If you are reporting a bug, please include:
 
@@ -42,7 +42,7 @@ official docs, in docstrings, or even on the web in blog posts, articles, and su
 Submit Feedback
 ~~~~~~~~~~~~~~~
 
-The best way to send feedback is to file an issue at https://github.com/elgertam/cookiecutter-pipenv/issues.
+The best way to send feedback is to file an issue at https://github.com/ninjabit/cookiecutter-serverless-aws-lambda/issues.
 
 If you are proposing a new feature:
 
@@ -57,7 +57,7 @@ Get Started!
 Ready to contribute? Here's how to set up `cookiecutter-pipenv` for local development. Please note this documentation assumes
 you already have `Pipenv` and `Git` installed and ready to go.
 
-1. Fork the `cookiecutter-pipenv` repo on GitHub.
+1. Fork the `cookiecutter-serverless-aws-lambda` repo on GitHub.
 2. Clone your fork locally::
 
   .. code-block:: bash
@@ -86,7 +86,7 @@ you already have `Pipenv` and `Git` installed and ready to go.
 
     $ flake8 ./tests
 
-6. The next step would be to run the test cases. `cookiecutter-pypackage` uses py.test, you can run PyTest. Before you run pytest you should ensure all dependancies are installed::
+6. The next step would be to run the test cases. `cookiecutter-serverless-aws-lambda` uses py.test, you can run PyTest. Before you run pytest you should ensure all dependancies are installed::
 
   .. code-block:: bash
 
@@ -132,7 +132,7 @@ Before you submit a pull request, check that it meets these guidelines:
    feature to the list in README.md.
 
 3. The pull request should work for Python 2.7, 3.4, 3.5 and 3.6, and for PyPy. Check
-   https://travis-ci.org/elgertam/cookiecutter-pipenv/pull_requests
+   https://travis-ci.org/ninjabit/cookiecutter-serverless-aws-lambda/pull_requests
    and make sure that the tests pass for all supported Python versions.
 
 Add a New Test
@@ -163,6 +163,6 @@ To write and run your new test, follow these steps:
 
 6. Rerun your test and confirm that your test passes. If it passes, congratulations!
 
-.. cookiecutter: https://github.com/elgertam/cookiecutter-pipenv
+.. cookiecutter serverless aws lambda: https://github.com/ninjabit/cookiecutter-serverless-aws-lambda
 .. virtualenv: https://virtualenv.pypa.io/en/stable/installation
 .. git: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git

@@ -1,7 +1,7 @@
 {
-  "full_name": "Europace dNa",
-  "email": "benjamin.weigel@europace.de",
-  "github_username_or_organization": "hypoport",
+  "full_name": "Tobia Ghiraldini",
+  "email": "tobia.ghiraldini@ninjabit.com",
+  "github_username_or_organization": "ninjabit",
   "project_name": "Serverless Python Project",
   "aws_account_id": "1234567890",
   "lambda_name": "{{ cookiecutter.project_name.lower().replace(' ', '-').replace('-', '_') + '_lambda' }}",
